@@ -1,0 +1,53 @@
+{
+  "id": "E131",
+  "value": 0.9032015115035751,
+  "reference70": "0.9032015115035750393039844982841524175709931087739357917198179416883584",
+  "method": "Independent Python Decimal with 80-digit working precision, reported to 70 significant digits; direct physical formula. E140 uses 260-step dimensional-wavenumber bisection, independent of the runtime dimensionless solver.",
+  "cases": [
+    {
+      "name": "critical flow",
+      "values": {
+        "v": 2,
+        "depth": 1,
+        "g": 4
+      },
+      "expected": 1.0,
+      "reference70": "1"
+    },
+    {
+      "name": "stationary water",
+      "values": {
+        "v": 0
+      },
+      "expected": 0.0,
+      "reference70": "0e+79"
+    },
+    {
+      "name": "nontrivial depth",
+      "values": {
+        "v": 7,
+        "depth": 2,
+        "g": 9.81
+      },
+      "expected": 1.5803327434500583,
+      "reference70": "1.580332743450058165577838935183506965583161293172821793134622313734390"
+    },
+    {
+      "name": "large depth without intermediate overflow",
+      "values": {
+        "v": 1e+150,
+        "depth": 1e+300,
+        "g": 1
+      },
+      "expected": 1.0,
+      "reference70": "1"
+    },
+    {
+      "name": "zero hydraulic depth rejected",
+      "values": {
+        "depth": 0
+      },
+      "throws": true
+    }
+  ]
+}
